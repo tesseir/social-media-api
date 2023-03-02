@@ -1,10 +1,32 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+const dayjs = require('dayjs');
 
-import dayjs from 'dayjs';
-import reactionSchema from './Reaction.js';
+const ReactionSchema = new Schema(
+  {
+    username: {
+      type: String,
+      required: true,
+    },
+    postDate: {
+      type: Date,
+      default: Date.now,
+      get: (value) => dayjs(value).format("MM DD, YYYY [at] hh:mm a"),
+    },
+    reactionText: {
+      type: String,
+      required: true,
+      minLength: 1,
+      maxLength: 255
+    }
+  },
+  {
+    toJSON: { virtuals: true, getters: true },
+    id: false
+  }
+);
 
-const thoughtSchema = new mongoose.Schema(
+const ThoughtSchema = new Schema(
   {
     thoughtID: {
       type: Schema.Types.ObjectId,
@@ -25,7 +47,7 @@ const thoughtSchema = new mongoose.Schema(
       minLength: 1,
       maxLength: 255
     },
-    reactions: [reactionSchema]
+    reactions: [ReactionSchema]
   },
   {
     toJSON: { virtuals: true },
@@ -33,5 +55,5 @@ const thoughtSchema = new mongoose.Schema(
   }
 );
 
-const Thought = mongoose.model("Thought", thoughtSchema);
-export default Thought;
+const Thought = mongoose.model("Thought", ThoughtSchema);
+module.exports = Thought;
