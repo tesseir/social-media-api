@@ -28,10 +28,10 @@ const ReactionSchema = new Schema(
 
 const ThoughtSchema = new Schema(
   {
-    thoughtID: {
-      type: Schema.Types.ObjectId,
-      default: () => new Types.ObjectId(),
-    },
+    // thoughtID: {
+    //   type: Schema.Types.ObjectId,
+    //   default: () => new Types.ObjectId(),
+    // },
     username: {
       type: String,
       required: true
