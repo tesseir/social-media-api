@@ -40,7 +40,7 @@ module.exports = {
       .catch((err) => res.status(500).json(err.message))
   },
   async addFriend(req, res) {
-
+    
   },
   async removeFriend(req, res) {
 
