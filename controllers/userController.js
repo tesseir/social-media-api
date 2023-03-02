@@ -40,7 +40,10 @@ module.exports = {
       .catch((err) => res.status(500).json(err.message))
   },
   async addFriend(req, res) {
-    
+    // await User.findOneAndUpdate(
+    //   { _id: req.params.id },
+    //   { $push: { friends: req.params.friendId }},
+    //   { runValidators: true, new: true })
   },
   async removeFriend(req, res) {
 
@@ -48,13 +51,3 @@ module.exports = {
 }
 
 
-
-// export {
-//   getAllUsers,
-//   getUsersById,
-//   createUser,
-//   updateUser,
-//   deleteUser,
-//   addFriend,
-//   removeFriend
-// }
