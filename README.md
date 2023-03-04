@@ -6,10 +6,10 @@ Video Demo: https://screenrec.com/share/seVcxU7yOg
 
 ## Image of use:
 Users
-![image of use]()
+![image of use](https://raw.githubusercontent.com/tesseir/social-media-api/main/assets/Capture.PNG)
 
 Thoughts
-![image of use]()
+![image of use](https://raw.githubusercontent.com/tesseir/social-media-api/main/assets/Capture2.PNG)
 
 ## Description
 
