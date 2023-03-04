@@ -63,6 +63,7 @@ module.exports = {
   },
 
   removeReaction(req, res) {
+    console.log(req)
     Thought.findOneAndUpdate(
       { _id: req.params.id },
       { $pull: { reactions: req.body } },

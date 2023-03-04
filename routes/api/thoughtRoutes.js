@@ -22,7 +22,7 @@ router.route("/:id")
 router.route("/:id/reactions")
   .post(addReaction)
 
-router.route(":id/reactions/:reactionId")
+router.route("/:id/reactions/:reactionId")
   .delete(removeReaction)
 
 module.exports = router;
